@@ -1,21 +1,17 @@
 import React, { ReactNode, createContext, useContext, useState } from 'react';
 
 interface UserContextType {
-  user: number;
-  order: number;
-  setUser: (user: number) => void;
-  setOrder: (order: number) => void;
+  userState: 'idle' | 'filter' | 'ordered' | 'finished' | 'menu';
+  setUserState: React.Dispatch<React.SetStateAction<UserContextType['userState']>>;
 }
 
 const UserContext = createContext<UserContextType|undefined>(undefined);
 
-
 const UserProvider = ({ children }: { children: ReactNode }) => {
-    const [user, setUser] = useState(0);
-    const [order, setOrder] = useState(0);
+    const [userState, setUserState] = useState('idle' as UserContextType['userState']);
 
     return (
-        <UserContext.Provider value={{ user, setUser, order, setOrder }}>
+        <UserContext.Provider value={{ userState, setUserState }}>
           {children}
         </UserContext.Provider>
     );

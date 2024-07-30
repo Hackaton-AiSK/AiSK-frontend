@@ -14,30 +14,31 @@ $placeholder-color: #e7e9eb;
 
 $search-bar-bg: linear-gradient(to right, #000000, #434343);
 
-$list-item-border: 1px solid #aaaaaa;
+$list-item-border: 1.5px solid $app-main;
 $search-bar-border: none;
 
-$item-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+$item-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $header-shadow: 0px 10px 10px rgba(56, 112, 164, 0.25);
 $chat-box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.1);
 $menu-item-shadow: 0px 0px 10px rgba(56, 112, 164, 0.4);
 $button-shadow: 0px 10px 0 rgba(209, 222, 235, 0.5);
 
 $font-family: "Noto Sans KR", sans-serif;
-$font-large: 20px;
+$font-large: 22px;
 $font-mid: 16px;
 $font-small: 14px;
 $font-color: #111;
 
 $content-gap: 14px;
 
-$page-pd: 40px 30px;
+$page-pd: 55px 30px 35px;
 $content-pd: 16px 20px;
+$item-pd: 22px 20px 16px;
 $header-pd: 20px 30px;
 $menu-pd: 40px 30px 20px;
 
 $radius-small: 8px;
-$radius-mid: 12px;
+$radius-mid: 15px;
 $radius-large: 20px;
 
 $page-mg: 15px 0;

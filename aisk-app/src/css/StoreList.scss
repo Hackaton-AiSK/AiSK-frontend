@@ -24,7 +24,7 @@
     width: 100%;
     align-items: start;
     flex-direction: column;
-    padding: $content-pd;
+    padding: $item-pd;
     box-sizing: border-box;
     background: $list-item-bg;
     border-radius: $radius-mid;
@@ -37,7 +37,7 @@
     }
     h1{
         font-size: $font-large;
-        margin: 0px;
+        margin: 0 0 7px;
         font-weight: normal;
     }
     &:hover { 

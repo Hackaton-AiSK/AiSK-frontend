@@ -1,0 +1,10 @@
+@import './_variables.scss';
+
+.container{
+    padding: $page-pd;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: white;
+}

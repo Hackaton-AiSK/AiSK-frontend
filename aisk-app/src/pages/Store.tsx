@@ -6,8 +6,10 @@ import Header from '../components/Header';
 import Menu from '../components/Menu';
 import ChatBox from '../components/ChatBox';
 import Info from '../components/Info';
+import { UserContext, useUserContext } from '../context/UserContext';
 
 const StorePage: React.FC = () => {
+  const { userState, setUserState } = useUserContext();
   const { id } = useParams<{ id: string }>();
   const store = storeListData.find(store => store.id === Number(id));
 
