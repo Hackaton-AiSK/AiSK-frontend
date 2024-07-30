@@ -2,30 +2,24 @@ import React, { useContext, useState } from 'react';
 import StoreList from '../components/StoreList';
 import '../css/Home.scss';
 import { UserContext, useUserContext } from '../context/UserContext';
+import bg from '../assets/images/home_bg.svg'
+import qr from '../assets/images/qr.svg'
+import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
-    const { user, setUser } = useUserContext();
-    const [query, setQuery] = useState('');
-
-    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-        setQuery(event.target.value);
-    };
+    const navigate = useNavigate();
 
     return (
     <div className='container'>
-            <p className='welcome-text'>가게를 선택해 주세요!</p>
-            <div className='flex'>
-                <div className="search-bar">
-                    <input
-                        type="text"
-                        value={query}
-                        onChange={handleInputChange}
-                        placeholder="가게 코드를 입력하세요"
-                    />
-                </div>
-                <img src="https://img.icons8.com/ios/452/search--v1.png" className="icon" alt="search" />
-            </div>
+        <p className='welcome-text'>가게를 선택해 주세요!</p>
         <StoreList />
+        <div className='qr-container'>
+            <div className='qr-button' onClick={() => navigate('/qr')}>
+                <img src={qr} className='qr-image' alt='' />
+            </div>
+        </div>
+        <p className='home-qr-text'>QR 찍어서 가게 선택하기</p>
+        <img src={bg} className='home-bg' alt='' />
     </div>
     );
 };

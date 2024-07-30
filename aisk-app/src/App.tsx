@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import StorePage from './pages/Store';
 import TransitionWrapper from './wrapper/TransitionWrapper';
+import QRPage from './pages/QR';
 const App: React.FC = () => {
   return (
     <Router>
@@ -10,6 +11,7 @@ const App: React.FC = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/store/:id" element={<StorePage/>} />
+          <Route path="/qr" element={<QRPage/>} />
         </Routes>
       </TransitionWrapper>
     </Router>
