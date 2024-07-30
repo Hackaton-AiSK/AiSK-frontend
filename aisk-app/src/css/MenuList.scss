@@ -1,0 +1,21 @@
+@import './_variables.scss';
+
+.menu-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.menu-grid-item {
+    text-align: center;
+    font-size: 18px;
+}
+
+.menu-image {
+    height: 120px;
+    border-radius: $radius-mid;
+    box-shadow: $menu-item-shadow
+}

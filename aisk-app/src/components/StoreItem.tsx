@@ -14,8 +14,8 @@ const StoreItem: React.FC<StoreItemProps> = ({ store, onClick }) => {
         >
             <h1>{store.store}</h1>
             <div className='flex'>
-            <p>{store.address}</p>
-            <p>{store.description}</p>
+                <p>{store.address}</p>
+                <p>{store.description}</p>
             </div>
         </div>
     );

@@ -1,6 +1,20 @@
 @import './_variables.scss';
 .menu-container{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: $menu-pd;
     flex: 5;
-    padding: $content-pd;
-    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: scroll;
+    color: $font-black;
+    margin-bottom: 12px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  
+    &::-webkit-scrollbar {
+      display: none; 
+    }
 }
