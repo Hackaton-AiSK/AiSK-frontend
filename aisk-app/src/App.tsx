@@ -2,15 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom';
 import Home from './pages/Home';
 import StorePage from './pages/Store';
+import TransitionWrapper from './wrapper/TransitionWrapper';
 const App: React.FC = () => {
   return (
     <Router>
-      <div>
+      <TransitionWrapper>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/store/:id" element={<StorePage/>} />
         </Routes>
-      </div>
+      </TransitionWrapper>
     </Router>
   );
 };

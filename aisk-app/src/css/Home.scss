@@ -36,5 +36,27 @@
       font-size: 16px;
       border: none;
       border-radius: $radius-mid;
+      &::placeholder {
+        color: $placeholder-color;
+        opacity: 1;
+      }
+    
+      &:-ms-input-placeholder { /* Internet Explorer 10+ */
+        color: $placeholder-color;
+      }
+    
+      &::-moz-placeholder { /* Firefox 19+ */
+        color: $placeholder-color;
+        opacity: 1;
+      }
+    
+      &:-moz-placeholder { /* Older versions of Firefox */
+        color: $placeholder-color;
+        opacity: 1;
+      }
+    
+      &::-webkit-input-placeholder { /* Safari and Chrome */
+        color: $placeholder-color;
+      }
   }
 }

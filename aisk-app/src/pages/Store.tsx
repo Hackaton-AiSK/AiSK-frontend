@@ -15,10 +15,12 @@ const StorePage: React.FC = () => {
   }
 
   return (
-    <div className="store-container">
-        <Header title={store.store} />
-        <Menu title={'메뉴'} />
-        <ChatBox title={'채팅창'} />
+    <div>
+        <div className="store-container">
+            <Header title={store.store} />
+            <Menu title={'메뉴'} />
+            <ChatBox title={'채팅창'} />
+        </div>
     </div>
   );
 };

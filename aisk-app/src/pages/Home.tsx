@@ -1,19 +1,15 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { ThemeContext } from '../context/UserContext';
-import '../css/Home.scss';
+import React, { useContext, useState } from 'react';
 import StoreList from '../components/StoreList';
+import '../css/Home.scss';
+import { UserContext, useUserContext } from '../context/UserContext';
 
 const Home: React.FC = () => {
-    const { theme, setTheme } = useContext(ThemeContext);
+    const { user, setUser } = useUserContext();
     const [query, setQuery] = useState('');
 
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setQuery(event.target.value);
     };
-
-    // useEffect(() => {
-    //     console.log('Home rendered');
-    // });
 
     return (
     <div className='container'>

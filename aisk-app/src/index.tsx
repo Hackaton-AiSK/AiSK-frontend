@@ -1,19 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
-import './css/Index.scss';  // 글로벌 SCSS 파일 임포트
 import App from './App';
+import './css/Index.scss'; // 글로벌 SCSS 파일 임포트
+import './index.css';
 import reportWebVitals from './reportWebVitals';
-import { ThemeProvider } from './context/UserContext';
+import { UserProvider } from './context/UserContext';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider>
+    <UserProvider>
       <App />
-    </ThemeProvider>
+    </UserProvider>
   </React.StrictMode>
 );
 
