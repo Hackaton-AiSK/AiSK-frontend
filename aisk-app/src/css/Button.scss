@@ -2,7 +2,22 @@
 
 .hand-button-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+.left-text{
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
+}
+
+.right-text{
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    font-weight: bold;
+    color: white;
+    font-size: 22px;
 }
