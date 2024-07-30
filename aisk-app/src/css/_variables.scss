@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Noto+Sans+KR:wght@100..900&display=swap");
+$header-height: 58px;
+
+$header-bg: #fff;
+$app-main: #3870A4;
+$list-item-bg: #fff;
+$chat-box-bg: #fff;
+$chat-box-bubble-bg: #e7e9eb;
+
+$search-bar-bg: linear-gradient(to right, #000000, #434343);
+
+$list-item-border: 1px solid #aaaaaa;
+$search-bar-border: none;
+
+$item-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+$header-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
+$chat-box-shadow: 0 -6px 8px rgba(0, 0, 0, 0.1);
+
+$font-family: "Noto Sans KR", sans-serif;
+$font-large: 20px;
+$font-mid: 16px;
+$font-small: 14px;
+$font-color: #111;
+
+$content-gap: 14px;
+
+$page-pd: 40px 30px;
+$content-pd: 16px 20px;
+
+$radius-small: 8px;
+$radius-mid: 12px;
+$radius-large: 20px;
+
+$page-mg: 15px 0;
+$content-mg: 15px 0;

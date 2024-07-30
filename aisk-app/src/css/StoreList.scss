@@ -1,0 +1,53 @@
+@import './_variables.scss';
+
+.store-list{
+    display: flex;
+    flex-wrap: wrap;
+    overflow: scroll;
+    flex: 14;
+    justify-content: center;
+    gap: $content-gap;
+    box-sizing: border-box;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 0 0 10px 0;
+  
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+}
+
+.store-item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    align-items: start;
+    flex-direction: column;
+    padding: $content-pd;
+    box-sizing: border-box;
+    background: $list-item-bg;
+    border-radius: $radius-mid;
+    border: $list-item-border;
+    box-shadow: $item-shadow;
+    p{
+        font-size: $font-mid;
+        margin: 0px;
+        color: #666;
+    }
+    h1{
+        font-size: $font-large;
+        margin: 0px;
+        font-weight: normal;
+    }
+    &:hover { 
+        background-color: $app-main;
+        color: white;
+        p{
+            color: white;
+        }
+        h1{
+            color: white;
+        }
+    } 
+}

@@ -1,0 +1,15 @@
+@import './_variables.scss';
+
+.header {
+    height: $header-height;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0;
+    padding: $content-pd;
+    box-sizing: border-box;
+    background-color: $header-bg;
+    border-radius: 0 0 20px 20px;
+    font-size: $font-large;
+    box-shadow: $header-shadow;
+}

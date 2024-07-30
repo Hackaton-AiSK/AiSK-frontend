@@ -1,0 +1,40 @@
+@import './_variables.scss';
+
+.container{
+    padding: $page-pd;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    background: white;
+}
+
+.welcome-text {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    font-size: $font-large;
+    color: $font-color;
+    font-weight: bold;
+    margin: content-mg;
+    font-size: 25px;
+}
+
+.search-bar{
+    margin: $page-mg;
+    text-align: center;
+    border-radius: $radius-mid;
+    background: $app-main;
+    flex: 1;
+  
+    input {
+      background: none;
+      text-align: center;
+      color: white;
+      font-size: $font-mid;
+      padding: $content-pd;
+      font-size: 16px;
+      border: none;
+      border-radius: $radius-mid;
+  }
+}

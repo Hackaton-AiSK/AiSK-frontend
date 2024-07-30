@@ -1,0 +1,31 @@
+@import './_variables.scss';
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $app-main;
+    font-family: $font-family;
+}
+p{
+    font-size: $font-mid;
+    color: $font-color;
+    margin: 0px;
+}
+.icon{
+    height: 36px;
+    width: 36px;
+}
+.flex{
+    box-sizing: border-box;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    gap: $content-gap;
+    align-items: center;
+}
+.flex-start{
+    display: flex;
+    width: 100%;
+    justify-content: start;
+}
