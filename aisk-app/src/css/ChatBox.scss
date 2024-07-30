@@ -1,36 +1,57 @@
 @import './_variables.scss';
 
 .chat-box-container{
-    flex: 3;
+    flex: 2;
     display: flex;
     flex-direction: column;
-    background: $chat-box-bg;
-    border-radius: 20px 20px 0 0;
-    padding: $page-pd;
     padding-top: 0;
-    box-shadow: $chat-box-shadow;
+}
+
+.agent-image-box{
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    margin: 0 calc(50vw - 60px);
+    box-sizing: border-box;
+    z-index: 3;
 }
 
 .agent-image{
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
+    width: 120px;
 }
 
 .chat-box-ui{
+    position: absolute;
+    bottom: 0;
     display: flex;
     width: 100%;
-    justify-content: space-around;
-    align-items: center;
-    box-sizing: border-box;
-    flex: 1;
-    padding: $content-pd;
+    justify-content: space-between;
+    align-items: end;
+    z-index: 1;
 }
 
 .chat-box-bubble{
     background: $chat-box-bubble-bg;
-    flex: 1;
     padding: $content-pd;
     border-radius: $radius-large;
     font-size: $font-mid;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.chat-box-bubble-container{
+    flex: 1;
+    padding: 0 30px 180px;
+    border-radius: $radius-large;
+    font-size: $font-mid;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+}
+
+.chat-box-bubble-polygon{
+    margin-right: 20%;
+    height: 25px;
 }

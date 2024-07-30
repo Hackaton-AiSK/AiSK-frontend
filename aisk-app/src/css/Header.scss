@@ -1,15 +1,23 @@
 @import './_variables.scss';
 
 .header {
-    height: $header-height;
     display: flex;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     margin: 0;
-    padding: $content-pd;
+    padding: $header-pd;
     box-sizing: border-box;
     background-color: $header-bg;
     border-radius: 0 0 20px 20px;
-    font-size: $font-large;
     box-shadow: $header-shadow;
+    line-height: 30px;
+    font-weight: bold;
+}
+.store-name {
+    color: $app-main;
+    font-size: $font-large;
+}
+
+.cancel{
+    width: 30px;
 }

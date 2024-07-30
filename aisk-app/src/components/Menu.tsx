@@ -1,5 +1,6 @@
 import React from 'react';
 import '../css/Menu.scss';
+import MenuItemList from './MenuitemList';
 
 interface MenuProps {
     title: string;
@@ -8,7 +9,7 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ title }) => {
   return (
     <div className="menu-container">
-      <div>{ title }</div>
+      <MenuItemList />
     </div>
   );
 };

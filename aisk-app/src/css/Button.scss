@@ -2,7 +2,32 @@
 
 .hand-button-container{
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+}
+
+.left-text{
+    position: absolute;
+    bottom: 40px;
+    left: 30px;
+    font-weight: 900;
+    color: $app-main;
+    font-size: 22px;
+}
+
+.right-text{
+    position: absolute;
+    bottom: 40px;
+    right: 30px;
+    font-weight: 900;
+    color: $app-main;
+    font-size: 22px;
+}
+
+.hand-right{
+    width: 150px;
+    height: 150px;
+    border-radius: 80% 0 0 0;
+}
+
+.hand-left{
+    border-radius: 0 80% 40% 0;
 }

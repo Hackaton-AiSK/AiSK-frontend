@@ -5,6 +5,7 @@ import '../css/Store.scss';
 import Header from '../components/Header';
 import Menu from '../components/Menu';
 import ChatBox from '../components/ChatBox';
+import Info from '../components/Info';
 
 const StorePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,6 +20,7 @@ const StorePage: React.FC = () => {
         <div className="store-container">
             <Header title={store.store} />
             <Menu title={'메뉴'} />
+            {/* <Info title={'정보'} /> */}
             <ChatBox title={'채팅창'} />
         </div>
     </div>
