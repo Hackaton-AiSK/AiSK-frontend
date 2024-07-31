@@ -1,0 +1,9 @@
+@import './_variables.scss';
+
+.final-container{
+    flex: 4;
+    padding: $content-pd;
+    color: $font-black;
+    background-color: aqua;
+    padding: $page-pd;
+}
