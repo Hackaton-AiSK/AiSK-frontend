@@ -26,8 +26,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({ title }) => {
   const [text, setText] = useState(infoInfo);
 
   const onMenuClick = () => {
-    setUserState('menu');
     setAgentState('idle');
+    setUserState('menu');
   }
 
   useEffect(() => {

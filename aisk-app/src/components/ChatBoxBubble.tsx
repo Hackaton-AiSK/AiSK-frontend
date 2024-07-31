@@ -33,7 +33,7 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer, reverse }
         }
       })();
     }
-  }, [userState, store, answer]);
+  }, [store, answer]);
   
   return (
     <div className="chat-box-bubble-container">
