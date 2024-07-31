@@ -25,6 +25,7 @@
     position: absolute;
     bottom: 0;
     z-index: 0;
+    animation: op 0.5s ease-out;
 }
 
 .chat-box-ui{
@@ -34,7 +35,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: end;
-    z-index: 10;
+    z-index: 200;
 }
 
 .chat-box-bubble{
@@ -45,6 +46,11 @@
     width: 100%;
     box-sizing: border-box;
     border: $chat-box-border;
+    animation: emerge 0.5s ease-out;
+}
+
+.fade-in {
+    animation: emerge 0.5s ease-out;
 }
 
 .chat-box-bubble-container{
@@ -64,3 +70,31 @@
     margin-right: 20%;
     height: 25px;
 }
+
+@keyframes emerge {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    60% {
+      opacity: 0.5;
+      transform: scale(1.03);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes op {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0.5;
+      transform: scale(1.03);
+    }
+    100% {
+      opacity: 1;
+    }
+  }

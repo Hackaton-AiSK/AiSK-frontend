@@ -14,7 +14,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
 
     const handleBackClick = () => {
       navigate(-1);
-      setUserState('idle');
     };
 
   return (

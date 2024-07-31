@@ -9,21 +9,17 @@ import Info from '../components/Info';
 import { UserContext, useUserContext } from '../context/UserContext';
 
 const StorePage: React.FC = () => {
-  const { userState, setUserState, setStoreId, setStoreName } = useUserContext();
+  const { userState, setUserState, userStore, setUserStore } = useUserContext();
   const { id } = useParams<{ id: string }>();
   const store = storeListData.find(store => store.id === Number(id));
   
   if (!store) {
     return <div>Store not found</div>;
-  } else{
-    setStoreId(Number(id));
-    setStoreName(store?.store || '');
   }
-  
   return (
     <div>
         <div className="store-container">
-            <Header title={store.store} />
+            <Header title={store.name} />
             { userState !== 'idle' ? <Menu title={'메뉴'} /> : <Info title={'정보'} />}
             <ChatBox title={'채팅창'} />
         </div>

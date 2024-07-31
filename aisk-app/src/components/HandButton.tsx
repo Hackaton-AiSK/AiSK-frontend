@@ -15,8 +15,8 @@ const HandButton: React.FC<HandButtonProps> = ({ direction, onClick }) => {
       {(direction === "right") ? <img src={handRight} onClick={onClick} className="hand-right" alt='' />
       : <img src={handLeft} onClick={onClick} className="hand-left" alt='' />
       }
-      {(direction === "right") ?  <div className='right-text'>말 끊기</div>
-      : <div className='left-text'>전체<br/>메뉴<br/>보기</div>
+      {(direction === "right") ?  <div className='right-text' onClick={onClick}>말 끊기</div>
+      : <div className='left-text' onClick={onClick}>전체<br/>메뉴<br/>보기</div>
       }
     </div>
   );

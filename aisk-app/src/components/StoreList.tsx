@@ -4,22 +4,20 @@ import { storeListData } from '../data/store';
 import '../css/StoreList.scss';
 import { useNavigate } from 'react-router-dom';
 import StoreItem from './StoreItem';
-
-export interface Store {
-  id: number;
-  store: string;
-  address: string;
-  description: string;
-}
+import { useUserContext } from '../context/UserContext';
+import { Store } from '../type/store';
 
 const StoreList: React.FC = () => {
+  const { userState, setUserState, setUserStore } = useUserContext();
   const [stores, setStores] = useState<Store[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-  const handleItemClick = (id: number) => {
-    navigate(`/store/${id}`);
+  const handleItemClick = (store: Store) => {
+    setUserState('idle');
+    setUserStore(store);
+    navigate(`/store/${store.id}`);
   };
 
   useEffect(() => {
@@ -48,7 +46,7 @@ const StoreList: React.FC = () => {
   return (
     <div className="store-list">
       {stores.map((store, index) => (
-        <StoreItem key={index} store={store} onClick={handleItemClick} />
+        <StoreItem key={index} store={store} onClick={()=>handleItemClick(store)} />
       ))}
     </div>
   );
