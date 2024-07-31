@@ -12,7 +12,7 @@ const QR: React.FC = () => {
         <p className='qr-text'>QR 찍어서 가게 선택하기</p>
         <QRreader />
         <div className='return'>
-            <div className='return-btn' onClick={() => navigate('/')}>
+            <div className='return-btn' onClick={() => navigate('/home')}>
                 <p className='return-text'>취소하기</p>
             </div>
         </div>
