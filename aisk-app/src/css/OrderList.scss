@@ -2,19 +2,10 @@
 
 .order-list {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
-    overflow: scroll;
     justify-content: center;
     gap: $content-gap;
     width: 100%;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    padding: 10px 0px;
-  
-    &::-webkit-scrollbar {
-      display: none; 
-    }
 }
 
 .order-item {
