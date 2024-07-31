@@ -16,7 +16,7 @@ const Splash: React.FC = () => {
       }, []);
 
     return (
-    <div className='container'>
+    <div className='splash-container'>
         <img src={logo} className='logo' alt='주문바다 로고' />
         <p className='name'>주문바다</p>
     </div>
