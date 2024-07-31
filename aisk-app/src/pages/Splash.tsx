@@ -9,10 +9,10 @@ const Splash: React.FC = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
           // Navigate to home screen after 1 second
-          window.location.href = '/home'; // Adjust to your routing setup
+          window.location.href = '/home';
         }, 1000);
     
-        return () => clearTimeout(timer); // Clean up timer on unmount
+        return () => clearTimeout(timer);
       }, []);
 
     return (
