@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchOrders } from '../api/orderList';
-import { orderListData } from '../data/order';
+
 import '../css/OrderList.scss';
 import { useNavigate } from 'react-router-dom';
 import OrderItem from './OrderItem';
@@ -9,10 +9,10 @@ import { Order } from '../type/order';
 
 interface OrderListProps {
   menuList: any[];
-  orderList: any[];
+  orderListD: any[];
 }
 
-const OrderList: React.FC<OrderListProps> = ({menuList, orderList}) => {
+const OrderList: React.FC<OrderListProps> = ({menuList, orderListD}) => {
   const { totalAmount, setTotalAmount } = useUserContext();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -20,13 +20,21 @@ const OrderList: React.FC<OrderListProps> = ({menuList, orderList}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    console.log('orderListData:', orderListData);
+
     console.log('menuList:', menuList);
     const getOrders = async () => {
       try {
-        const data = orderListData;
+        const orderListData = [];
+        // iterate through key and value of  orderListD
+        for (const [key, value] of Object.entries(orderListD)) {
+          orderListData.push({
+            menu: menuList.find((menu) => menu.ID === key),
+            number: value,
+          });
+        }
+        // @ts-ignore
         setTotalAmount(orderListData.reduce((sum, item) => sum + (item.menu.price * item.number), 0));
-        setOrders(data);
+        setOrders(orderListData);
       } catch (err) {
         setError('Failed to fetch orders');
       } finally {
