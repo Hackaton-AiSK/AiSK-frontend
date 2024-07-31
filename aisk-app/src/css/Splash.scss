@@ -1,0 +1,51 @@
+@import '../css/variables';
+
+@keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes stay {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+  
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; 
+    background-color: white;
+    animation: fadeIn 1s ease-in-out, stay 1s 1s, fadeOut 1s 2s;
+  }
+  
+  .logo {
+    max-width: 50%; 
+    height: auto; 
+  }
+  
+  .name {
+    margin-top: 0px; 
+    font-size: 36px;
+    font-weight: $font-bold;
+    color: $app-main;
+  }
+  
