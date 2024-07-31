@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuItem } from '../type/menuItem';
+import { MenuItem } from '../type/MenuItem';
 import exampleImage from '../assets/images/example_coffee.svg';
 import '../css/MenuList.scss';
 
@@ -27,7 +27,8 @@ const MenuItemList: React.FC = () => {
           <p>{item.name}</p>
           <p>{item.price}원</p>
         </div>
-      ))}
+      ))
+      }
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import StoreList from '../components/StoreList';
 import '../css/Home.scss';
 import { UserContext, useUserContext } from '../context/UserContext';
@@ -10,6 +10,17 @@ const Home: React.FC = () => {
     const { userState, setUserState } = useUserContext();
     const navigate = useNavigate();
     setUserState('idle');
+    useEffect(() => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+    }, []);
+
+    window.addEventListener("resize", () => {
+        console.log("resize");
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+        console.log(vh);
+    });
 
     return (
     <div className='container'>
