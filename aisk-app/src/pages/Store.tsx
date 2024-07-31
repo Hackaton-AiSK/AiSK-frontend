@@ -171,7 +171,7 @@ const StorePage: React.FC = () => {
         try {
           setIsLoading(true);
           console.log('fetching menu');
-          const blob = await getMenu(1);
+          const blob = await getMenu(store.id);
           console.log('blob:', blob);
           const formattedData = blob.menu_list.map((item: any, index: number) => ({
             id: index, // or use a proper id if available in the data
@@ -199,9 +199,7 @@ const StorePage: React.FC = () => {
     <div>
         <div className="store-container">
         <div>
-      <button onClick={() => setIsRecording(true)}>Start Recording</button>
-      <button onClick={() => setIsRecording(false)}>Stop Recording</button>
-      {isRecording ? <p>Recording...</p> : <p>Not Recording</p>}
+      {isRecording ? <p style={{position: 'absolute'}}>Recording...</p> : <p style={{position: 'absolute'}}>Not Recording</p>}
       {audioURL && (
         <div>
           <audio controls src={audioURL}></audio>
@@ -229,7 +227,7 @@ const StorePage: React.FC = () => {
             </div>
             : null
             }
-            <ChatBox title={'채팅창'} repeat={repeat} answer={answer} />
+            <ChatBox title={'채팅창'} repeat={repeat} answer={answer} onListen={() => setIsRecording(true)}/>
         </div>
     </div>
   );

@@ -16,15 +16,23 @@ interface ChatBoxProps {
     menuScript?: string;
     repeat: string;
     answer: string;
+    onListen: () => void;
 }
 
-const ChatBox: React.FC<ChatBoxProps> = ({ title, menuScript, repeat, answer }) => {
+const ChatBox: React.FC<ChatBoxProps> = ({ title, menuScript, repeat, answer, onListen }) => {
   const { userState, setUserState, agentState, setAgentState, userStore, userSetting } = useUserContext();
 
   const onMenuClick = () => {
     setAgentState('idle');
     setUserState('menu');
   }
+
+  useEffect(() => {
+    if (agentState === 'listening') {
+      onListen();
+    }
+  }
+  , [agentState]);
 
   return (
     <div className={ userState !== 'menu' ? "chat-box-container":'chat-box-menu-container'}>

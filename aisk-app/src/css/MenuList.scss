@@ -23,6 +23,9 @@
 
 .menu-image {
     height: 120px;
+    width: 120px;
     border-radius: $radius-mid;
+    // background-size: cover;
+    object-fit: cover;
     box-shadow: $menu-item-shadow
 }
