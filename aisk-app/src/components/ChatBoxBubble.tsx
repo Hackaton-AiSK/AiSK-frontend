@@ -11,11 +11,10 @@ interface ChatBoxBubbleProps {
 }
 
 const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
-  const { userState, userStore, setAgentState } = useUserContext();
+  const { userState, userStore, setAgentState, agentState } = useUserContext();
   const store = userStore;
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  
   useEffect(() => {
     if (store) {
       (async () => {

@@ -18,7 +18,7 @@ const MenuItemList: React.FC<MenuItemListProps> = ({ filter, menuItems }) => {
     <div className="menu-grid-container">
       {filteredMenuItems.map(item => (
         <div key={item.ID} className="menu-grid-item">
-          <img className='menu-image' src={exampleImage} alt="example" />
+          <img className='menu-image' src={item.url} alt="example" />
           <p style={{fontSize: '18px'}}>{item.name}</p>
           <p>{item.price}원</p>
         </div>
