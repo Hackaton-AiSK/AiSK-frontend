@@ -14,16 +14,18 @@
     justify-content: center;
     margin: 0 calc(50vw - 60px);
     box-sizing: border-box;
-    z-index: 3;
+    z-index: 201;
 }
 
 .agent-image{
-    width: 120px;
+    height: 162px;
 }
 
 .blur{
     position: absolute;
     bottom: 0;
+    z-index: 0;
+    animation: op 0.5s ease-out;
 }
 
 .chat-box-ui{
@@ -33,7 +35,7 @@
     width: 100%;
     justify-content: space-between;
     align-items: end;
-    z-index: 1;
+    z-index: 200;
 }
 
 .chat-box-bubble{
@@ -43,6 +45,12 @@
     font-size: $font-mid;
     width: 100%;
     box-sizing: border-box;
+    border: $chat-box-border;
+    animation: emerge 0.5s ease-out;
+}
+
+.fade-in {
+    animation: emerge 0.5s ease-out;
 }
 
 .chat-box-bubble-container{
@@ -51,12 +59,42 @@
     border-radius: $radius-large;
     font-size: $font-mid;
     display: flex;
+    position: relative;
     flex-direction: column;
     justify-content: end;
     align-items: end;
+    z-index: 1;
 }
 
 .chat-box-bubble-polygon{
     margin-right: 20%;
     height: 25px;
 }
+
+@keyframes emerge {
+    0% {
+      opacity: 0;
+      transform: scale(0.9) translateY(20px);
+    }
+    60% {
+      opacity: 0.5;
+      transform: scale(1.03);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes op {
+    0% {
+      opacity: 0;
+    }
+    60% {
+      opacity: 0.5;
+      transform: scale(1.03);
+    }
+    100% {
+      opacity: 1;
+    }
+  }

@@ -7,7 +7,9 @@ import qr from '../assets/images/qr.svg'
 import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
+    const { userState, setUserState } = useUserContext();
     const navigate = useNavigate();
+    setUserState('idle');
 
     return (
     <div className='container'>
