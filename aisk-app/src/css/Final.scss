@@ -4,6 +4,21 @@
     flex: 4;
     padding: $content-pd;
     color: $font-black;
-    background-color: aqua;
+    background-color: white;
     padding: $page-pd;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.final-title {
+    text-align: center;
+    font-size: $font-large;
+    font-weight: $font-bold;
+}
+
+.final-number{
+    text-align: center;
+    font-size: 100px;
+    font-weight: $font-extraBold;
 }
