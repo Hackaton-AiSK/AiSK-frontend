@@ -1,5 +1,5 @@
 import React from 'react';
-import { MenuItem } from '../type/MenuItem';
+import { MenuItem } from '../type/menuItem';
 import exampleImage from '../assets/images/example_coffee.svg';
 import '../css/MenuList.scss';
 
