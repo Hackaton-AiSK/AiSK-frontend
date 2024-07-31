@@ -147,10 +147,10 @@ const StorePage: React.FC = () => {
     analyserRef.current.getByteFrequencyData(audioDataArrayRef.current);
     // @ts-ignore
     const averageVolume = audioDataArrayRef.current.reduce((sum, value) => sum + value, 0) / audioDataArrayRef.current.length;
-    if (averageVolume < 50) { // Silence threshold
+    if (averageVolume < 40) { // Silence threshold
       if (!silenceStartRef.current) {
         silenceStartRef.current = null;
-      } else if (Date.now() - silenceStartRef.current > 1000) { // 2 seconds of silence
+      } else if (Date.now() - silenceStartRef.current > 500) { // 2 seconds of silence
         setIsRecording(false); // Stop recording
       }
     } else {

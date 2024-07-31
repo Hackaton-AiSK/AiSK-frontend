@@ -15,6 +15,12 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
   const store = userStore;
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  
+  const onEndedAudio = () => {
+    if(userState === 'finished') return;
+    setAgentState('listening');
+  }
+
   useEffect(() => {
     if (store) {
       (async () => {
@@ -27,7 +33,7 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
           setAudioSrc(audioUrl);
         } catch (error) {
           console.error('Error fetching TTS:', error);
-        } finally {
+                  } finally {
           setIsLoading(false);
         }
       })();
@@ -40,7 +46,7 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
         <p><span style={{fontWeight: 'bold'}}>{repeat}</span> { answer }</p>
       </div>
       <img src={chatBoxBubblePolygon} className="chat-box-bubble-polygon" alt='' />
-      {audioSrc && <audio src={audioSrc} autoPlay onEnded={()=>setAgentState('listening')}/>}
+      {audioSrc && <audio src={audioSrc} autoPlay onEnded={onEndedAudio}/>}
     </div>
   );
 };

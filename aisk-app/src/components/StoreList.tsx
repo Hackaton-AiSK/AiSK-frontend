@@ -16,7 +16,6 @@ const StoreList: React.FC = () => {
   const navigate = useNavigate();
 
   const handleItemClick = (store: Store) => {
-    setUserState("idle");
     setUserStore(store);
     navigate(`/store/${store.id}`);
   };
@@ -49,7 +48,7 @@ const StoreList: React.FC = () => {
         */
             const storeList: Store[] = data.map((store: any) => {
               return {
-                id: 0, // id is not provided in the json data
+                id: store.id, // id is not provided in the json data
                 name: store.name,
                 address: store.address,
                 description: store.distance,

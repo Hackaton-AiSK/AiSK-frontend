@@ -9,7 +9,7 @@ interface MenuItemListProps {
 }
 
 const MenuItemList: React.FC<MenuItemListProps> = ({ filter, menuItems }) => {
-  const filteredMenuItems = filter.length ? menuItems.filter(item => filter.includes(Number(item.id)+1)) : menuItems;
+  const filteredMenuItems = filter.length ? menuItems.filter(item => filter.includes(Number(item.id))) : menuItems;
 
   console.log(menuItems);
   console.log(filter);
