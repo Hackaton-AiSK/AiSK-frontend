@@ -5,6 +5,7 @@ import StorePage from './pages/Store';
 import TransitionWrapper from './wrapper/TransitionWrapper';
 import QRPage from './pages/QR';
 import Splash from './pages/Splash';
+import AudioRecorder from './pages/Text';
 
 const App: React.FC = () => {
   return (
@@ -15,6 +16,7 @@ const App: React.FC = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/store/:id" element={<StorePage/>} />
           <Route path="/qr" element={<QRPage/>} />
+          <Route path="/test" element={<AudioRecorder></AudioRecorder>} />
         </Routes>
       </TransitionWrapper>
     </Router>

@@ -4,9 +4,10 @@ import { Order } from '../type/order';
 
 interface OrderItemProps {
     order: Order;
+    menuList: any[];
 }
 
-const OrderItem: React.FC<OrderItemProps> = ({ order }) => {
+const OrderItem: React.FC<OrderItemProps> = ({ order, menuList }) => {
 
     return (
         <div className="order-item" 

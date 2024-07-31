@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import '../css/ChatBox.scss';
 import chatBoxBubblePolygon from '../assets/images/polygon.png';
 import { useUserContext } from '../context/UserContext';
 import { getTts } from '../api/tts';
+import axios from 'axios';
 
 interface ChatBoxBubbleProps {
     repeat: string;
     answer: string;
-    reverse?: boolean;
 }
 
-const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer, reverse }) => {
+const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
   const { userState, userStore, setAgentState } = useUserContext();
   const store = userStore;
   const [audioSrc, setAudioSrc] = useState<string | null>(null);
@@ -33,15 +33,12 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer, reverse }
         }
       })();
     }
-  }, [userState, store, answer]);
+  }, [store, answer]);
   
   return (
     <div className="chat-box-bubble-container">
-      <div key={answer} className="chat-box-bubble">{
-        !reverse ?
+      <div key={answer} className="chat-box-bubble">
         <p><span style={{fontWeight: 'bold'}}>{repeat}</span> { answer }</p>
-        : <p>{ answer } <span style={{fontWeight: 'bold'}}>{repeat}</span></p>
-        }
       </div>
       <img src={chatBoxBubblePolygon} className="chat-box-bubble-polygon" alt='' />
       {audioSrc && <audio src={audioSrc} autoPlay onEnded={()=>setAgentState('listening')}/>}

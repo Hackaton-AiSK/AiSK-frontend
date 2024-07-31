@@ -7,15 +7,21 @@ import OrderItem from './OrderItem';
 import { useUserContext } from '../context/UserContext';
 import { Order } from '../type/order';
 
-const OrderList: React.FC = () => {
+interface OrderListProps {
+  menuList: any[];
+  orderList: any[];
+}
+
+const OrderList: React.FC<OrderListProps> = ({menuList, orderList}) => {
   const { totalAmount, setTotalAmount } = useUserContext();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
   const navigate = useNavigate();
 
-
   useEffect(() => {
+    console.log('orderListData:', orderListData);
+    console.log('menuList:', menuList);
     const getOrders = async () => {
       try {
         const data = orderListData;
@@ -42,7 +48,7 @@ const OrderList: React.FC = () => {
   return (
     <div className="order-list">
       {orders.map((order, index) => (
-        <OrderItem key={index} order={order} />
+        <OrderItem key={index} order={order} menuList={menuList}/>
       ))}
     </div>
   );
