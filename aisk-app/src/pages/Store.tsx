@@ -8,6 +8,7 @@ import ChatBox from '../components/ChatBox';
 import Info from '../components/Info';
 import { UserContext, useUserContext } from '../context/UserContext';
 import Order from '../components/Order';
+import Final from '../components/Final';
 
 const StorePage: React.FC = () => {
   const { userState, setUserState, userStore, setUserStore } = useUserContext();
@@ -23,6 +24,7 @@ const StorePage: React.FC = () => {
             <Header title={store.name} />
             { userState === 'idle' ? <Info title={'안내'} /> :
               userState === 'ordered' ? <Order title={'주문'} /> :
+              userState === 'finished' ? <Final title={'완료'} /> :
               <Menu title={'메뉴'} />
             }
             <ChatBox title={'채팅창'} />

@@ -1,0 +1,33 @@
+@import './_variables.scss';
+
+.order-list {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    overflow: scroll;
+    justify-content: center;
+    gap: $content-gap;
+    width: 100%;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    padding: 10px 0px;
+  
+    &::-webkit-scrollbar {
+      display: none; 
+    }
+}
+
+.order-item {
+    display: flex;
+    flex-direction: row;
+    background-color: #edf2f7;
+    width: 100%;
+    justify-content: space-between; 
+    align-items: center; 
+    border-radius: $radius-extraLarge;
+
+    p {
+        font-size: 20px;
+        margin: 20px;
+    }
+}
