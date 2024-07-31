@@ -10,7 +10,7 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ title }) => {
   const { userState, setUserState, userStore } = useUserContext();
   return (
-    <div className="menu-container" style={ userState === 'menu' ? { paddingBottom:'300px'} : {}}>
+    <div className="menu-container" style={ userState === 'menu' ? { paddingBottom:'200px'} : {}}>
       <MenuItemList />
     </div>
   );

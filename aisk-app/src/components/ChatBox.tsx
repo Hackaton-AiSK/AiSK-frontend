@@ -60,7 +60,8 @@ const ChatBox: React.FC<ChatBoxProps> = ({ title, menuScript }) => {
       </div>
       }
       <div className='agent-image-box'>
-        <img src={agentState === 'listening' ? agentListening : agent} key={agentState} className="agent-image" alt='' />
+      {agentState === 'listening' ? <img src={agentListening} className="agent-side-image" alt='' />
+       : <img src={agent} className="agent-image" alt='' />}
       </div>
       { (userState !== 'menu') && (userState !== 'finished') ? <div className="chat-box-ui">
         <HandButton direction='' onClick={onMenuClick}/>
