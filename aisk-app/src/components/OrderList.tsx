@@ -9,9 +9,10 @@ import { Order } from '../type/order';
 
 interface OrderListProps {
   menuList: any[];
+  orderList: any[];
 }
 
-const OrderList: React.FC<OrderListProps> = ({menuList}) => {
+const OrderList: React.FC<OrderListProps> = ({menuList, orderList}) => {
   const { totalAmount, setTotalAmount } = useUserContext();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -19,6 +20,8 @@ const OrderList: React.FC<OrderListProps> = ({menuList}) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    console.log('orderListData:', orderListData);
+    console.log('menuList:', menuList);
     const getOrders = async () => {
       try {
         const data = orderListData;

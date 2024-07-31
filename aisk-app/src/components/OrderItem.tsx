@@ -9,8 +9,6 @@ interface OrderItemProps {
 
 const OrderItem: React.FC<OrderItemProps> = ({ order, menuList }) => {
 
-
-
     return (
         <div className="order-item" 
         >

@@ -5,12 +5,13 @@ import OrderList from './OrderList';
 interface OrderProps {
     title: string;
     menuList: any[];
+    orderList: any[];
 }
 
-const Order: React.FC<OrderProps> = ({ title, menuList }) => {
+const Order: React.FC<OrderProps> = ({ title, menuList, orderList }) => {
   return (
     <div className="order-container">
-      <OrderList menuList={menuList}/>
+      <OrderList orderList={orderList} menuList={menuList}/>
     </div>
   );
 };

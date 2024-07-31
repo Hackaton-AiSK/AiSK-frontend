@@ -14,6 +14,7 @@ import axios from 'axios';
 
 const StorePage: React.FC = () => {
   const [menuList, setMenuList] = useState<number[]>([]);
+  const [orderList, setOrderList] = useState<number[]>([]);
   const [menuItems, setMenuItems] = useState<any[]>([]);
   const { userState, setUserState, userStore, agentState, userSetting, setUserStore, totalAmount, setAgentState} = useUserContext();
   const { id } = useParams<{ id: string }>();
@@ -113,6 +114,7 @@ const StorePage: React.FC = () => {
             setUserState('filter');
           }
           setMenuList(response.data.now_menu_list);
+          setOrderList(response.data.basket);
           console.log(response.data);
         });
 
@@ -147,12 +149,12 @@ const StorePage: React.FC = () => {
     const averageVolume = audioDataArrayRef.current.reduce((sum, value) => sum + value, 0) / audioDataArrayRef.current.length;
     if (averageVolume < 50) { // Silence threshold
       if (!silenceStartRef.current) {
-        silenceStartRef.current = Date.now();
-      } else if (Date.now() - silenceStartRef.current > 2000) { // 2 seconds of silence
+        silenceStartRef.current = null;
+      } else if (Date.now() - silenceStartRef.current > 1000) { // 2 seconds of silence
         setIsRecording(false); // Stop recording
       }
     } else {
-      silenceStartRef.current = null;
+      silenceStartRef.current = Date.now();
     }
 
     requestAnimationFrame(monitorAudio);
@@ -213,7 +215,7 @@ const StorePage: React.FC = () => {
               userState === 'ordered' ? <p className='order-title'>주문 완료</p> : null
             }
             { userState === 'idle' ? <Info title={'안내'} /> :
-              userState === 'ordered' ? <Order menuList={menuItems} title={'주문'} /> :
+              userState === 'ordered' ? <Order menuList={menuItems} orderList={orderList} title={'주문'} /> :
               userState === 'finished' ? <Final title={'완료'} /> :
               <Menu title={'메뉴'} filter={menuList} menuItems={menuItems}/>
             }{
