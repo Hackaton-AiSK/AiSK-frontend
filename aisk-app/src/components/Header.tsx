@@ -13,7 +13,12 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     const { userState, setUserState } = useUserContext();
 
     const handleBackClick = () => {
-      navigate(-1);
+      if (userState === 'menu'){
+        setUserState('idle');
+      }
+      else {
+        navigate(-1);
+      }
     };
 
   return (

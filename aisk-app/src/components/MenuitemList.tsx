@@ -24,7 +24,7 @@ const MenuItemList: React.FC = () => {
       {menuItems.map(item => (
         <div key={item.id} className="menu-grid-item">
           <img className='menu-image' src={exampleImage} alt="example" />
-          <p>{item.name}</p>
+          <p style={{fontSize: '20px'}}>{item.name}</p>
           <p>{item.price}원</p>
         </div>
       ))

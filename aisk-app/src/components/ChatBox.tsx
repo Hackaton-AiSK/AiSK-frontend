@@ -31,6 +31,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ title }) => {
   }
 
   useEffect(() => {
+    console.log('rendering userState:', userState);
     if (userState === 'menu') {
       setBoldText(menuText);
       setText(menuInfo);

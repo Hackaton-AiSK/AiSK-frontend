@@ -3,7 +3,7 @@
 .menu-grid-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 15px;
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
@@ -11,7 +11,13 @@
 
 .menu-grid-item {
     text-align: center;
-    font-size: 18px;
+    font-size: 24px;
+    p{
+        font-size: 18px;
+    }
+    img{
+        margin: 5px 0;
+    }
 }
 
 .menu-image {
