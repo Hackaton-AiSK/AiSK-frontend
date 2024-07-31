@@ -58,6 +58,17 @@
     animation: emerge 0.5s ease-out;
 }
 
+.wave-image{
+  width: 80px;
+}
+
+.wave-image-box{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  padding: 0 0 180px;
+}
+
 .fade-in {
     animation: emerge 0.5s ease-out;
 }
