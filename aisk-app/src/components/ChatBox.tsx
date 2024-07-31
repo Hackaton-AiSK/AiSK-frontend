@@ -40,7 +40,7 @@ const ChatBox: React.FC<ChatBoxProps> = ({ title }) => {
   }, [userState]);
 
   return (
-    <div className="chat-box-container">
+    <div className={ userState !== 'menu' ? "chat-box-container":'chat-box-menu-container'}>
       <ChatBoxBubble repeat={boldText} 
       answer={text}/>
       <div className='agent-image-box'>
@@ -50,7 +50,6 @@ const ChatBox: React.FC<ChatBoxProps> = ({ title }) => {
       { userState !== 'menu' ? <HandButton direction='' onClick={onMenuClick}/> : null }
       { userState !== 'menu' ? <HandButton direction='right' onClick={()=>{}}/> : null }
       </div>
-      { userState === 'menu' ? <img src={blur} className="blur" alt='' /> : null }
     </div>
   );
 };
