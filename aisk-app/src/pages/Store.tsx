@@ -7,6 +7,7 @@ import Menu from '../components/Menu';
 import ChatBox from '../components/ChatBox';
 import Info from '../components/Info';
 import { UserContext, useUserContext } from '../context/UserContext';
+import Order from '../components/Order';
 
 const StorePage: React.FC = () => {
   const { userState, setUserState, userStore, setUserStore } = useUserContext();
@@ -20,7 +21,10 @@ const StorePage: React.FC = () => {
     <div>
         <div className="store-container">
             <Header title={store.name} />
-            { userState !== 'idle' ? <Menu title={'메뉴'} /> : <Info title={'정보'} />}
+            { userState === 'idle' ? <Info title={'안내'} /> :
+              userState === 'ordered' ? <Order title={'주문'} /> :
+              <Menu title={'메뉴'} />
+            }
             <ChatBox title={'채팅창'} />
         </div>
     </div>

@@ -1,6 +1,8 @@
 @import './_variables.scss';
-.menu-container{
+.order-container{
     flex: 4;
     padding: $content-pd;
-    color: white;
+    color: $font-black;
+    background-color: aqua;
+    padding: $page-pd;
 }

@@ -8,7 +8,7 @@ interface OrderProps {
 const Order: React.FC<OrderProps> = ({ title }) => {
   return (
     <div className="order-container">
-      <div>{ title }</div>
+      <p className="order-title">주문 내역</p>
     </div>
   );
 };

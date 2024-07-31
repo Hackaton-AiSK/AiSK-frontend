@@ -2,7 +2,8 @@
 
 .container{
     padding: $page-pd;
-    height: 100vh;
+    flex:1;
+    height: 100%;
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
@@ -10,12 +11,13 @@
 }
 
 .home-bg{
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
     height: 142px;
     z-index: 0;
+    transform: translateY(20px);
 }
 
 .home-qr-text{
