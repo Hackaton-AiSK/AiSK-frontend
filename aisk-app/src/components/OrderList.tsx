@@ -9,10 +9,10 @@ import { Order } from '../type/order';
 
 interface OrderListProps {
   menuList: any[];
-  orderListD: any[];
+  orderList: any[];
 }
 
-const OrderList: React.FC<OrderListProps> = ({menuList, orderListD}) => {
+const OrderList: React.FC<OrderListProps> = ({menuList, orderList}) => {
   const { totalAmount, setTotalAmount } = useUserContext();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
@@ -26,12 +26,13 @@ const OrderList: React.FC<OrderListProps> = ({menuList, orderListD}) => {
       try {
         const orderListData = [];
         // iterate through key and value of  orderListD
-        for (const [key, value] of Object.entries(orderListD)) {
+        for (const [key, value] of Object.entries(orderList)) {
           orderListData.push({
-            menu: menuList.find((menu) => menu.ID === key),
+            menu: menuList.find((menu) => menu.id === Number(key)),
             number: value,
           });
         }
+        console.log('orderListData:', orderListData);
         // @ts-ignore
         setTotalAmount(orderListData.reduce((sum, item) => sum + (item.menu.price * item.number), 0));
         setOrders(orderListData);
@@ -43,7 +44,7 @@ const OrderList: React.FC<OrderListProps> = ({menuList, orderListD}) => {
     };
 
     getOrders();
-  }, []);
+  }, [orderList]);
 
   if (loading) {
     return <div>Loading...</div>;

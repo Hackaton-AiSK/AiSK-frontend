@@ -30,8 +30,8 @@ const StorePage: React.FC = () => {
   const audioDataArrayRef = useRef<Uint8Array | null>(null);
   const silenceStartRef = useRef<number | null>(null);
   const [transcript, setTranscript] = useState<string>('');
-  const [answer, setAnswer] = useState<string>('차가운 커피 하나요.');
-  const [repeat, setRepeat] = useState<string>('4 종류의 커피 중 무엇으로 드릴까요? 아메리카노, 라떼, 콜드브루, 에스프레소가 있어요.');
+  const [answer, setAnswer] = useState<string>('');
+  const [repeat, setRepeat] = useState<string>('');
   const { menuText, menuInfo } = { menuText: '전체 메뉴', menuInfo: ` 보여드릴게요. ${userSetting==='blind' ? "menuScript"+'가 준비되어 있어요. ':''}도움이 필요하시면 언제든지 말씀해 주세요.`};
   const { infoText, infoInfo } = { infoText: '', infoInfo: `안녕하세요, ${userStore.name} 입니다. ${userSetting==='blind' ? '전체 메뉴 읽기는 왼쪽 하단, 말 끊기는 오른쪽 하단을 눌러주세요. ':''}무엇을 도와드릴까요?`};
   const { finalText, finalInfo } = {finalText: '주문이 완료되었습니다', finalInfo: '. 주문 번호는 15번입니다. 현장에서 결제해 주세요'};

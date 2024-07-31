@@ -22,6 +22,7 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
   }
 
   useEffect(() => {
+    if(answer==='' && repeat==='') return;
     if (store) {
       (async () => {
         try {
@@ -38,7 +39,7 @@ const ChatBoxBubble: React.FC<ChatBoxBubbleProps> = ({ repeat, answer }) => {
         }
       })();
     }
-  }, [store, answer]);
+  }, [answer]);
   
   return (
     <div className="chat-box-bubble-container">
