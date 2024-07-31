@@ -5,7 +5,7 @@ $header-bg: #fff;
 $app-main: #3870A4;
 $list-item-bg: #fff;
 $chat-box-bg: #fff;
-$chat-box-bubble-bg: #e7e9eb;
+$chat-box-bubble-bg: #fff;
 
 $font-black: #111;
 $font-white: #fff;
@@ -16,6 +16,7 @@ $search-bar-bg: linear-gradient(to right, #000000, #434343);
 
 $list-item-border: 1.5px solid $app-main;
 $search-bar-border: none;
+$chat-box-border: 1.5px solid $app-main;
 
 $item-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 $header-shadow: 0px 10px 10px rgba(56, 112, 164, 0.25);

@@ -12,6 +12,7 @@
     box-shadow: $header-shadow;
     line-height: 30px;
     font-weight: bold;
+    z-index: 200;
 }
 .store-name {
     color: $app-main;
