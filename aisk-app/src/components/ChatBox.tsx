@@ -12,14 +12,15 @@ waveform.register()
 
 interface ChatBoxProps {
     title: string;
+    menuScript?: string;
 }
 
-const ChatBox: React.FC<ChatBoxProps> = ({ title }) => {
-  const { userState, setUserState, agentState, setAgentState, userStore } = useUserContext();
+const ChatBox: React.FC<ChatBoxProps> = ({ title, menuScript }) => {
+  const { userState, setUserState, agentState, setAgentState, userStore, userSetting } = useUserContext();
 
   const { repeat, answer } = { repeat: '차가운 커피 하나요.', answer: '4 종류의 커피 중 무엇으로 드릴까요? 아메리카노, 라떼, 콜드브루, 에스프레소가 있어요.' };
-  const { menuText, menuInfo } = { menuText: '전체 메뉴', menuInfo: ' 보여드릴게요. 도움이 필요하시면 언제든지 말씀해 주세요.'};
-  const { infoText, infoInfo } = { infoText: '', infoInfo: `안녕하세요, ${userStore.name} 입니다. 무엇을 도와드릴까요?`};
+  const { menuText, menuInfo } = { menuText: '전체 메뉴', menuInfo: ` 보여드릴게요. ${userSetting==='blind' ? menuScript+'가 준비되어 있어요. ':''}도움이 필요하시면 언제든지 말씀해 주세요.`};
+  const { infoText, infoInfo } = { infoText: '', infoInfo: `안녕하세요, ${userStore.name} 입니다. ${userSetting==='blind' ? '전체 메뉴 읽기는 왼쪽 하단, 말 끊기는 오른쪽 하단을 눌러주세요. ':''}무엇을 도와드릴까요?`};
   const { finalText, finalInfo } = {finalText: '현장에서 결제해주세요.', finalInfo: '주문이 완료되었습니다. 주문 번호는 15번입니다. 음식이 모두 준비되면 가져다 드릴게요.'};
 
   const [boldText, setBoldText] = useState(infoText);
