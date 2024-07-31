@@ -15,7 +15,7 @@ const StoreList: React.FC = () => {
   const navigate = useNavigate();
 
   const handleItemClick = (store: Store) => {
-    setUserState('ordered');
+    setUserState('idle');
     setUserStore(store);
     navigate(`/store/${store.id}`);
   };
