@@ -8,7 +8,7 @@ import { useUserContext } from '../context/UserContext';
 import { Order } from '../type/order';
 
 const OrderList: React.FC = () => {
-  const { userState, setUserState, setUserStore } = useUserContext();
+  const { totalAmount, setTotalAmount } = useUserContext();
   const [orders, setOrders] = useState<Order[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -19,6 +19,7 @@ const OrderList: React.FC = () => {
     const getOrders = async () => {
       try {
         const data = orderListData;
+        setTotalAmount(orderListData.reduce((sum, item) => sum + (item.menu.price * item.number), 0));
         setOrders(data);
       } catch (err) {
         setError('Failed to fetch orders');

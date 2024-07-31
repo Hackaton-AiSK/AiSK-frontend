@@ -1,7 +1,7 @@
 import React from 'react';
-import { MenuItem } from '../type/MenuItem';
 import exampleImage from '../assets/images/example_coffee.svg';
 import '../css/MenuList.scss';
+import { MenuItem } from '../type/menuItem';
 
 const menuItems: MenuItem[] = [
   { id: 1, url: '/home', name: '아메리카노', price: 3000 },
