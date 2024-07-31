@@ -7,4 +7,35 @@
     flex-direction: column;
     box-sizing: border-box;
     background: white;
+    gap: 10px;
+}
+
+.qr-text {
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 27px;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.return {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.return-btn {
+    display: inline-block;
+    border: $list-item-border;
+    border-radius: $radius-large;
+    margin: 20px 0px;
+    box-shadow: $item-shadow;
+  
+    .return-text {
+      font-size: 20px;
+      font-weight: 400;
+      line-height: 27px;
+      text-align: center;
+      padding: 10px 15px;
+    }
 }
