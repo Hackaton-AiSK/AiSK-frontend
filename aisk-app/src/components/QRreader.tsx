@@ -13,10 +13,14 @@ const QRreader: React.FC = () => {
     // Result
     const [scannedResult, setScannedResult] = useState<string | undefined>("");
 
+    // Access pop up
+    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+
     // Success
     const onScanSuccess = (result: QrScanner.ScanResult) => {
         console.log(result);
         setScannedResult(result.data);
+        setIsModalOpen(true);
     };
 
     // Fail
@@ -54,6 +58,16 @@ const QRreader: React.FC = () => {
         }
     }, [qrOn]);
 
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
+    const openUrl = () => {
+        if (scannedResult) {
+            window.open(scannedResult, "_blank");
+        }
+    };
+
     return (
         <div className="qr-reader">
             {/* QR */}
@@ -68,17 +82,14 @@ const QRreader: React.FC = () => {
                 />
             </div>
 
-            {/* Show Data Result if scan is successful */}
-            {scannedResult && (
-                <p style={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    zIndex: 99999,
-                    color: "white",
-                }}>
-                    Scanned Result: {scannedResult}
-                </p>
+            {isModalOpen && scannedResult && (
+                <div className="modal">
+                    <div className="modal-content">
+                        <p>주소: {scannedResult}</p>
+                        <button onClick={openUrl}>바로가기</button>
+                        <button onClick={closeModal}>취소하기</button>
+                    </div>
+                </div>
             )}
         </div>
     );

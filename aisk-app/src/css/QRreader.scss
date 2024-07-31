@@ -1,3 +1,4 @@
+@import './_variables.scss';
 
 .qr-reader {
     width: 430px;
@@ -38,5 +39,52 @@
         .qr-frame {
             transform: translateX(-50%) translateY(-10%);
         }
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+
+    .modal-content {
+      background: white;
+      padding: 20px 10px;
+      border-radius: $radius-large;
+      text-align: center;
+      max-width: 500px;
+      width: 80%;
+
+      p {
+        margin: 15px 0px;
+      }
+
+      button {
+        margin: 5px;
+        padding: 10px 20px;
+        border: none;
+        border-radius: $radius-large;
+        cursor: pointer;
+        box-shadow: $item-shadow;
+
+        &:first-of-type {
+          background-color: $app-main;
+          color: white;
+          font-size: 16px;
+        }
+
+        &:last-of-type {
+          background-color: $app-sub;
+          color: black;
+          font-size: 16px;
+        }
+      }
     }
 }
