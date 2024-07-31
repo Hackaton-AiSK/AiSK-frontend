@@ -9,18 +9,18 @@ const QRreader: React.FC = () => {
     const videoEl = useRef<HTMLVideoElement | null>(null);
     const qrBoxEl = useRef<HTMLDivElement | null>(null);
     const [qrOn, setQrOn] = useState<boolean>(true);
-
-    // Result
-    const [scannedResult, setScannedResult] = useState<string | undefined>("");
-
-    // Access pop up
-    const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
+    // State to prevent multiple redirects
+    const [isRedirecting, setIsRedirecting] = useState<boolean>(false); 
 
     // Success
     const onScanSuccess = (result: QrScanner.ScanResult) => {
         console.log(result);
-        setScannedResult(result.data);
-        setIsModalOpen(true);
+        
+        // Directly open the scanned URL
+        if (result.data && !isRedirecting) {
+            setIsRedirecting(true);
+            window.location.href = result.data;
+        }
     };
 
     // Fail
@@ -58,16 +58,6 @@ const QRreader: React.FC = () => {
         }
     }, [qrOn]);
 
-    const closeModal = () => {
-        setIsModalOpen(false);
-    };
-
-    const openUrl = () => {
-        if (scannedResult) {
-            window.open(scannedResult, "_blank");
-        }
-    };
-
     return (
         <div className="qr-reader">
             {/* QR */}
@@ -82,15 +72,6 @@ const QRreader: React.FC = () => {
                 />
             </div>
 
-            {isModalOpen && scannedResult && (
-                <div className="modal">
-                    <div className="modal-content">
-                        <p>주소: {scannedResult}</p>
-                        <button onClick={openUrl}>바로가기</button>
-                        <button onClick={closeModal}>취소하기</button>
-                    </div>
-                </div>
-            )}
         </div>
     );
 };
