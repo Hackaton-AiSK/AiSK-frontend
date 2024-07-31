@@ -7,9 +7,10 @@ import qr from '../assets/images/qr.svg'
 import { useNavigate } from 'react-router-dom';
 
 const Home: React.FC = () => {
-    const { userState, setUserState } = useUserContext();
+    const { userState, setUserState, setAgentState } = useUserContext();
     const navigate = useNavigate();
     setUserState('idle');
+    setAgentState('idle');
     useEffect(() => {
         let vh = window.innerHeight * 0.01;
         document.documentElement.style.setProperty("--vh", `${vh}px`);

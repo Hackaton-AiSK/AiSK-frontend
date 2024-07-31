@@ -27,13 +27,7 @@
 }
 
 .agent-image{
-    height: 162px;
-}
-
-.blur{
-    position: absolute;
-    bottom: 0;
-    z-index: 0;
+    max-height: 162px;
     animation: op 0.5s ease-out;
 }
 
@@ -108,11 +102,8 @@
 
   @keyframes op {
     0% {
-      opacity: 0;
-    }
-    60% {
       opacity: 0.5;
-      transform: scale(1.03);
+      transform: scale(1.02);
     }
     100% {
       opacity: 1;

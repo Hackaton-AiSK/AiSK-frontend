@@ -16,32 +16,9 @@ const StorePage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const store = storeListData.find(store => store.id === Number(id));
 
-  const [audioSrc, setAudioSrc] = useState<string | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  
-  useEffect(() => {
-    if (userState === 'idle' && store) {
-      (async () => {
-        try {
-          setIsLoading(true);
-          const greetingText = `안녕하세요, ${store.name}입니다. 무엇을 도와드릴까요?`;
-          const greetingBlob = await getTts(greetingText);
-          
-          const audioUrl = URL.createObjectURL(new Blob([greetingBlob]));
-          setAudioSrc(audioUrl);
-        } catch (error) {
-          console.error('Error fetching TTS:', error);
-        } finally {
-          setIsLoading(false);
-        }
-      })();
-    }
-  }, [userState, store]);
-
   if (!store) {
     return <div>Store not found</div>;
   }
-
 
   return (
     <div>
@@ -66,7 +43,6 @@ const StorePage: React.FC = () => {
             : null
             }
             <ChatBox title={'채팅창'} />
-            {audioSrc && <audio src={audioSrc} autoPlay />}
         </div>
     </div>
   );

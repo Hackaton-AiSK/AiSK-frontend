@@ -8,6 +8,8 @@ interface UserContextType {
   setUserStore: React.Dispatch<React.SetStateAction<Store>>;
   totalAmount: number;
   setTotalAmount: React.Dispatch<React.SetStateAction<number>>;
+  agentState: 'speaking' | 'listening' | 'idle';
+  setAgentState: React.Dispatch<React.SetStateAction<UserContextType['agentState']>>;
 }
 
 const UserContext = createContext<UserContextType|undefined>(undefined);
@@ -16,9 +18,11 @@ const UserProvider = ({ children }: { children: ReactNode }) => {
     const [userState, setUserState] = useState('idle' as UserContextType['userState']);
     const [userStore, setUserStore] = useState({} as Store);
     const [totalAmount, setTotalAmount] = useState(0);
+    const [agentState, setAgentState] = useState('idle' as UserContextType['agentState']);
 
     return (
-        <UserContext.Provider value={{ userState, setUserState, userStore, setUserStore, totalAmount, setTotalAmount}}>
+        <UserContext.Provider value={{ userState, setUserState, userStore, setUserStore, totalAmount, setTotalAmount,
+                                      agentState, setAgentState}}>
           {children}
         </UserContext.Provider>
     );
